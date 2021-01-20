@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.log
+haters/
+.idea/
+.directory
+*-FINISHED.html
+*-FINISHED.js
