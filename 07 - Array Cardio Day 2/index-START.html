@@ -46,10 +46,19 @@
     // Array.prototype.findIndex()
     // Find the comment with this ID
     const index = comments.findIndex(findComment);
+    
     // delete the comment with the ID of 823423
-    comments.splice(index, 1);
+    
+    // normal way to do that
+    // comments.splice(index, 1); 
+    
+    // Redux and ES6 way (to learn about)
+    const newArray = [
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
+    ];
     // new comments array:
-    console.log(comments);
+    console.table(newArray);
 
   </script>
 </body>
