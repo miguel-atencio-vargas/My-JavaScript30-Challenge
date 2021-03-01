@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
+:root {
+    --live-color-2: hsl(0, 100%, 67%);
+    --live-color: hsl(52, 100%, 60%);
+    --desaturated-black: hsl(0, 0%, 38%);
+    --semi-desaturated-black: hsl(249, 22%, 12%);
+    --white: hsl(0, 0%, 100%);
+    --border-triangle: 15px;
+    --line-height-triangle: 28px;
+}
+
+.o-hidde {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.o-blur {
+    filter: opacity(62.1%) blur(3px);
+}
+
+.c-body__container {
+    height: 100vh;
+    padding: calc(0.0375*100vh) 16px calc(0.115*100vh);
+    font-family: 'Nunito', Courier, monospace;
+    font-size: 2rem;
+}
+
+.c-terminal {
+    margin: 0 auto;
+    max-width: 525px;
+}
+
+.c-terminal__container {
+    border-radius: 15px;
+}
+
+.c-terminal__head {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--desaturated-black);
+    border-bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-left: 10px;
+}
+
+.c-terminal__circle {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    border-radius: 50px;
+    background-color: var(--live-color-2);
+    margin-right: 5px;
+}
+
+.c-terminal__circle:hover {
+    background-image: url('./images/close.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.c-terminal__circle-2 {
+    background-color: #AC8FCC;
+}
+
+.c-terminal__circle-2:hover {
+    background-image: url('./images/maximaze.png');
+}
+
+.c-terminal__circle-3 {
+    background-color: #7ACDC2;
+}
+
+.c-terminal__circle-3:hover {
+    background-image: url('./images/minimaze.png');
+}
+
+.c-terminal__body {
+    padding: 10px 7px;
+    border: 1px solid var(--desaturated-black);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.c-command {
+    display: flex;
+    margin: 5px 0;
+}
+
+.c-command__user {
+    max-height: 30px;
+    color: var(--white);
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: var(--semi-desaturated-black);
+    padding-left: 5px;
+    line-height: var(--line-height-triangle);
+    font-size: 2rem;
+    font-family: 'Ubuntu Mono';
+}
+
+.c-command__triangle {
+    width: 0;
+    height: 0;
+    border-left: var(--border-triangle) solid var(--semi-desaturated-black);
+    border-bottom: var(--border-triangle) solid var(--live-color);
+    border-top: var(--border-triangle) solid var(--live-color);
+}
+
+.c-command__icon {
+    max-height: 30px;
+    line-height: var(--line-height-triangle);
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding: 0 5px;
+    background-color: var(--live-color);
+}
+
+.c-command__triangle-2 {
+    border-left: var(--border-triangle) solid var(--live-color);
+    border-right: 4px solid transparent;
+    border-top: var(--border-triangle) solid transparent;
+    border-bottom: var(--border-triangle) solid transparent;
+}
+
+.c-command__content {
+    font-family: 'Ubuntu Mono';
+    font-size: 1.8rem;
+}
+
+/* ======  Styles of carousel & cards   ========== */
+
+ul.c-carousel {
+    max-width: 525px;
+    margin: 15px auto 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.c-card {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 7px;
+    border: 1px solid var(--desaturated-black);
+}
+
+/* ========= Items ========== */
+
+.c-card-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 0;
+    margin-bottom: 22px;
+}
+
+.c-card-item__img {
+    position: absolute;
+    transition: transform .5s ease-in-out;
+}
+
+.c-card-item__img:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.c-card-item__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+}
+
+.c-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 13px;
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: var(--live-color);
+    margin: 5px 0;
+}
+
+.c-button span {
+    line-height: 0;
+    font-weight: 700;
+    color: var(--desaturated-black);
+}
+
+.c-button img {
+    width: 23px;
+    padding-left: 3px;
+}
+
+.c-card-heading {
+    font-size: 2.3rem;
+    line-height: 16.8px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.c-card-tags span {
+    font-family: 'Barlow';
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.html {
+    color: #FF5858;
+}
+
+.css {
+    color: #3C99DC;
+}
+
+.js {
+    color: #F0DB4F;
+}
+
+.c-card-item-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px 8px;
+}
+
+@media only screen and (min-width: 769px) {
+    .c-body__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .c-terminal {
+        width: 525px;
+        margin: 0;
+        padding-right: 10px;
+    }
+    ul.c-carousel {
+        margin: 0;
+        padding-left: 10px;
+        overflow-y: scroll;
+        max-height: 55vh;
+    }
+    .c-card {
+        cursor: pointer;
+    }
+}
