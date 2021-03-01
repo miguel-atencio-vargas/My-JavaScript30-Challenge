@@ -96,6 +96,35 @@
   </div>
 
 <script>
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+  let lastChecked;
+  
+  function handleCheck(e) {
+    // inBetween nos dira si estamos dentro del area para marcar [✔️]
+    let inBetween = false;
+    // mirar si se esta presionando la tecla Shift
+    // y luego mirar si se esta [✔️] el input y no lo contrario [ ]
+    if (e.shiftKey && this.checked) {
+      checkboxes.forEach(checkbox => {
+        console.log(checkbox);
+          
+        if (checkbox === this || checkbox === lastChecked){
+          inBetween = !inBetween;
+          console.log("I've started to check" );
+        }
+        if(inBetween){
+          checkbox.checked = true;
+        }
+
+      });
+    }
+
+    lastChecked = this;
+  }
+  
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', handleCheck);
+  })
 </script>
 </body>
 </html>
